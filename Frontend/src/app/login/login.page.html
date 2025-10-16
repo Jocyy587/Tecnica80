@@ -19,14 +19,18 @@
         <ion-input type="password" placeholder="Password"></ion-input>
       </ion-item>
 
-      <!-- Enlace para recuperar contraseña -->
-      <div class="forgot-password-container">
-        <a href="#">Forgot password?</a>
-      </div>
+        <div class="forgot-password-container" id="present-alert">
+          <ion-alert
+            trigger="present-alert"
+            header="Administracion"
+            subHeader="Escuela Secundaria tecnica 80"
+            message="Ir a la institucion para cambio de contraseña."
+          ></ion-alert>
+          <a>¿Olvidaste tu contraseña?</a>
+          </div>
 
-      <!-- Botones de acción -->
+      <!-- Botones de acción --> 
       <ion-button expand="block" class="login-btn">LOGIN</ion-button>
-      <ion-button expand="block" fill="clear" class="close-btn">Close</ion-button>
 
     </div>
   </div>

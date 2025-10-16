@@ -35,3 +35,73 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+ion-alert {
+  /* Global CSS Variables for the Alert */
+  --backdrop-opacity: 0.8; /* Make the background darker */
+  --background: #000;
+  --border-radius: 8px;
+  
+  /* Applying the cyberpunk border and glow to the alert container */
+  .alert-wrapper {
+    background: var(--background);
+    border: 2px solid rgb(255, 255, 255);
+    /* Use filter: drop-shadow for border glow effect */
+    filter: drop-shadow(0 0 10px rgb(0, 0, 0));
+    /* For older browsers, you might still need box-shadow */
+    box-shadow: 0 0 15px rgba(245, 67, 13, 0.5); 
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Ensures title background fits neatly */
+  }
+
+  /* Título */
+  .alert-title {
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0400ff; /* Brighter color for the text */
+    background: #111; /* Dark background for the title band */
+    padding: 15px 20px;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  /* Mensaje */
+  .alert-message {
+    color: #fff;
+    padding: 20px;
+    line-height: 1.4em;
+    text-align: center;
+    font-family: monospace; /* Gives a retro-tech look */
+  }
+  
+  /* If you add buttons later, you'll need styles for them too: */
+  .alert-button {
+    color: #002fff !important; 
+    border: 1px solid #0e1791;
+    margin: 5px;
+    background: #000 !important;
+  }
+  /* Desactiva la animación por defecto de Ionic */
+  --animation-name: none;
+  
+  /* Define el punto inicial para la animación de entrada (Start scale=0.5, Opacity=0) */
+  --transition-initial-opacity: 0;
+  --transition-initial-scale: 0.5;
+
+  /* Define el tiempo de la transición */
+  --transition-duration: 300ms; /* Ajusta este valor si quieres que sea más rápido o lento */
+  
+  /* La animación de entrada usa las siguientes clases: */
+  .alert-wrapper-enter {
+    transform: scale(var(--transition-initial-scale));
+    opacity: var(--transition-initial-opacity);
+    transition: transform var(--transition-duration) ease-out, opacity var(--transition-duration) ease-out;
+  }
+  
+  /* La animación de salida usa las siguientes clases: */
+  .alert-wrapper-leave {
+    transform: scale(var(--transition-initial-scale));
+    opacity: var(--transition-initial-opacity);
+    transition: transform var(--transition-duration) ease-in, opacity var(--transition-duration) ease-in;
+  }
+}
+
