@@ -1,0 +1,12 @@
+ionic g service services/api
+ionic g page Nombre
+ionic start
+ionic server // ionic s
+
+
+////////////////////////////
+git add *
+git commit -m "Coso a cometiar"
+git push origin main
+////////////////////////////
+

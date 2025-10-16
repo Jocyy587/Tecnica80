@@ -1,0 +1,252 @@
+/*
+  Este es el archivo de estilos SCSS para tu página de inicio de sesión.
+  Contiene todas las reglas para que el HTML se vea como en la imagen.
+*/
+
+ion-content {
+  // Color de fondo principal (rojo oscuro)
+  // Color de fondo principal
+  --background: #2a3c8e;
+
+ 
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+ 
+  /* --- ESTILOS BASE (TABLET Y MÓVIL) --- */
+ 
+  .logo-section {
+    flex: 1; // Ocupa el espacio superior disponible
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+
+    .logo {
+      margin-bottom: 15px;
+    }
+      //Tecnica 80
+    padding: 20px;
+ 
+    ion-img {
+      width: 180px; // Tamaño base para el logo
+    }
+ 
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: -30px;
+      margin-top: -25px;
+      color: #f0f0f0;
+ 
+      .main-text {
+        font-size: 1.8rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+      }
+      //Escuela
+ 
+      .sub-text {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        color: #cccccc;
+      }
+    }
+  }
+
+ 
+  .form-section {
+    background: #ffffff;
+    padding: 35px 25px;
+    // Redondea solo las esquinas superiores para el efecto de tarjeta
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0px -10px 20px rgba(11, 12, 66, 0.432);
+
+    box-shadow: 0px -10px 25px rgba(0, 0, 0, 0.3);
+ 
+    h2 {
+      font-weight: bold;
+      font-size: 26px;
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #1e6b8a;
+      text-align: center
+    }
+
+      text-align: center;
+    }
+ 
+    p {
+      color: #888;
+      margin-top: 0;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+      text-align: center;
+    }
+ 
+    .input-item {
+      // Estilo para los campos de texto
+      --background: #10253a;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      --padding-start: 15px;
+      height: 55px;
+    }
+
+ 
+    .forgot-password-container {
+      text-align: center;
+      margin-bottom: 25px;
+      margin-top: -5px;
+
+ 
+      a {
+        color: #6aa4ef;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: 500;
+      }
+    }
+
+ 
+    .login-btn {
+      // Estilo para el botón principal de LOGIN
+      --background: #5ba9f2;
+      --border-radius: 10px;
+      height: 50px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+ 
+    .close-btn {
+      // Estilo para el botón secundario de cerrar
+      --color: #000000;
+      text-transform: capitalize;
+      font-weight: 500;
+      font-size: 16px;
+    }
+  
+
+/* --- Media Queries para Diseño Adaptable (Responsive) --- */
+
+// Estilos para Tablets (pantallas de hasta 768px de ancho)
+@media (max-width: 768px) {
+  ion-content .form-section {
+    padding: 30px 20px; // Reduce el padding horizontal y vertical
+
+    h2 {
+      font-size: 24px; // Reduce un poco el tamaño del título
+    }
+  }
+
+  ion-content .logo-section .logo-text .main-text {
+    font-size: 1.6rem; // Reduce el tamaño del texto principal del logo
+  }
+}
+
+// Estilos para Celulares (pantallas de hasta 480px de ancho)
+ 
+/* --- VISTA PARA CELULARES (hasta 480px) --- */
+@media (max-width: 480px) {
+
+  /*
+  *** Ajuste de Espacio Vertical (Sección Superior Azul) ***
+  Reducimos el espacio vertical para que el cuadro blanco suba más
+  */
+  ion-content .logo-section {
+    padding-top: 10px; /* Reducido a 10px para que el cuadro blanco suba más */
+    flex: 0.5; /* Reducido a 0.5 para que la sección ocupe menos espacio */
+
+    /* Flexbox para centrar horizontalmente (esto se mantiene para centrar el logo/texto) */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: center; /* Centra el contenido verticalmente en su espacio asignado */
+
+    ion-img {
+      max-width: 150px;
+      width: 140px;
+    }
+
+    .logo-text {
+      margin-top: -10px;
+      text-align: center;
+    }
+  }
+
+  .main-text {
+    font-size: 1.5rem;
+  }
+
+  /*
+  *** Bordes Circulares Completos para el Formulario (Cuadro Blanco) ***
+  Usamos 'border-radius' para redondear todas las esquinas
+  */
+  ion-content .form-section {
+    padding: 30px 20px; /* Menos padding para pantallas muy pequeñas */
+    
+    /* ¡CAMBIO CLAVE: Usamos border-radius para todas las esquinas! */
+    border-radius: 25px; 
+
+    /* Resto de estilos */
+    h2 {
+      font-size: 22px;
+    }
+    .main-text {
+      font-size: 1.5rem;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}
+/* --- VISTA PARA ESCRITORIO (más de 1024px) --- */
+@media (min-width: 1025px) {
+  ion-content {
+    .login-container {
+      flex-direction: row; // Cambia la dirección a horizontal
+      max-width: 1200px;
+      margin: 0 auto; // Centra el contenedor en pantallas grandes
+    }
+ 
+    .logo-section {
+      flex: 1;
+      justify-content: center;
+ 
+      ion-img {
+        width: 250px; // Logo más grande
+      }
+ 
+      .logo-text {
+        margin-top: -30px;
+        .main-text {
+          font-size: 2.5rem; // Texto del logo más grande
+        }
+        .sub-text {
+          font-size: 0.9rem;
+        }
+      }
+    }
+ 
+    .form-section {
+      flex: 1;
+      max-width: 500px; // Ancho máximo para el formulario
+      margin: auto 40px auto 0; // Centra verticalmente y añade margen
+      border-radius: 20px; // Redondea todas las esquinas
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25); // Sombra diferente
+      padding: 40px;
+    }
+  }
+}
